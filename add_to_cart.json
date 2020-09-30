@@ -1,0 +1,29 @@
+{
+  "data": {
+    "checkoutLineItemsReplace": {
+      "checkout": {
+        "id": "Z2lkOi8vc2hvcGlmeS9DaGVja291dC8xZTJkOTA2NzI2M2UwNjFiYzczMDViNmQwNjA4OWQ2MD9rZXk9OWQ0ODczNmY0OGIxNmNlNTA1NzQzMzBiOWRmNDc5MGE=",
+        "lineItems": {
+          "edges": [
+            {
+              "node": {
+                "quantity": 2,
+                "title": "short",
+                "variant": {
+                  "priceV2": {
+                    "amount": "6.0"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "totalPriceV2": {
+          "amount": "12.0"
+        },
+        "webUrl": "https://testngrok.myshopify.com/26772668497/checkouts/1e2d9067263e061bc7305b6d06089d60?key=9d48736f48b16ce50574330b9df4790a"
+      },
+      "userErrors": []
+    }
+  }
+}

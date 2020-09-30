@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      h2 {
+        color: royalblue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body style="margin: 0 auto; padding:20%;">
+    <h1>Welcome to Home Page {% if fname != None %} {{ fname }} {{ lname }} {% endif %}!</h1>
+
+    <div>
+      <p> Admin access token : {{ from_shopify.admin }} </p>
+      <p> Storefront access token : {{ from_shopify.storefront}} </p>
+    </div>
+    <ul>
+      <h2> Customers stuff :</h2>
+      <li><a href="/signup">Click here to create a customer</a></li>
+      <li><a href="/login">Click here to log in</a></li>
+      <li><a href="/log_out">Click here to log out</a></li>
+      <li><a href="/products">Click to see the products</a></li>
+      <li><a href="/cart">Click here to see your cart</a></li>
+    </ul>
+    <ul>
+      <h2>Merchant stuff :</h2>
+      <li><a href="/webhook_form">Click here to subscribe to a webhook</a></li>
+      <li><a href="/webhooks">Click here to see all the webhooks registered</a></li>
+      <li><a href="/scope">Click here to see all scopes you asked for</a></li>
+      <li><a href="/session">Click here to see session data stored</a></li>
+    </ul>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

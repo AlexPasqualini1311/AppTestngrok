@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body style="margin: 0 auto; padding:20%;">
+    <h1>You are in the cart</h1>
+
+    {% if vide %}
+    <div>
+      <p> Your cart is empty :'( </p>
+    </div>
+    
+    {% else %}
+    <div>
+        <h2> Your products are :</h2>
+
+        <form action="/update_cart" method="POST">
+          <input type="hidden" name="checkout" value="{{ checkout }}"/>
+        {% for line in cart %}
+            <div style="border: 1px solid black; margin: 5px;">
+                <h3>{{ line.title }}</h3>
+                  <input type="hidden" name="title_{{ line.title }}" value="{{ line.title }}"/>
+                  <input type="hidden" name="productId_{{ line.title }}" value="{{ line.id }}"/>
+                  <label for="productId_{{ line.title }}">{{ line.id }}</label>
+                  <label style="margin: 5px;" for="quantity">quantity : </label>
+                  <input type="number" name="quantity_{{ line.title }}" min="0" max="10" value="{{ line.quantity }}"/>
+                <p style="color: brown; margin-left: 5px;">price : {{line.price}} €</p>
+                <a href="/product_page/{{line.title}}"> Click to see the product's page</a>
+            </div>
+        {% endfor %}
+        <input type="submit" id="btnSubmit" value="update your cart"/>
+      </form>
+    </div>
+    <div style="margin:5px;border: cornflowerblue 1px solid;">
+        <h3 style="text-align: end;">total price : {{total}} €</h3>
+    </div>
+    <button id="payBtn" url="{{ url }}" onclick="pay()"> Process to payment </button>
+    {% endif %}
+    <div>
+        <form action="/home">
+          <input type="submit" value="return to homepage">
+        </form>
+    </div>
+
+<!-- the method to open a new window and go to payment url-->
+<script>
+    function pay(){
+        url= document.getElementById("payBtn").getAttribute("url");
+        window.open(url);
+    }
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

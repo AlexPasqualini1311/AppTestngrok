@@ -1,0 +1,27 @@
+{
+  "data": {
+    "webhookSubscriptionCreate": {
+      "userErrors": [
+        {
+          "field": [
+            "webhookSubscription",
+            "callbackUrl"
+          ],
+          "message": "Address for this topic has already been taken"
+        }
+      ],
+      "webhookSubscription": null
+    }
+  },
+  "extensions": {
+    "cost": {
+      "actualQueryCost": 10,
+      "requestedQueryCost": 10,
+      "throttleStatus": {
+        "currentlyAvailable": 990,
+        "maximumAvailable": 1000.0,
+        "restoreRate": 50.0
+      }
+    }
+  }
+}

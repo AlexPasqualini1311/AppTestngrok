@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("pwd").value;
+            var confirmPassword = document.getElementById("pwd2").value;
+            if (password != confirmPassword) {
+                alert("Your first Password is not similar with 2nd password. Please enter same password in both");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+        form{
+            width: 49%;
+            display: block;
+            margin: auto 0;
+        }
+        label {
+          margin: 5px;
+          width: auto;
+        }
+
+        input{
+            margin: auto;
+            width: 170px;
+        }
+
+        #btnSubmit{
+            width: auto;
+        }
+
+        div.info {
+            width: 49%;
+            right: 0px;
+            margin-right: 10px;
+            display: block;
+        }
+      </style>
+  </head>
+  <body style="margin: 0 auto; padding:10%;">
+    <h1>Log in</h1>
+
+    <form action="/login_form" method="POST">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email"/>
+    </div>
+    <div>
+      <label for="pwd">Password</label>
+      <input type="password" name="pwd" id="pwd"/>
+    </div>
+      <input type="submit" name="Submit" id="btnSubmit" value="Submit"/>
+
+    </form>
+
+    <div class="info">
+    <h3>A correct account</h3>
+    <p>email : exemple@email.com</p>
+    <p>password : password</p>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

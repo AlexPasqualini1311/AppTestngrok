@@ -1,0 +1,42 @@
+{
+  "data": {
+    "products": {
+      "edges": [
+        {
+          "node": {
+            "title": "short",
+            "variants": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zMjIxNTI4MzgyNjc2OQ==",
+                    "priceV2": {
+                      "amount": "6.0"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "title": "pokeball",
+            "variants": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8zMjI5NTc0ODQ2ODgxNw==",
+                    "priceV2": {
+                      "amount": "300.0"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

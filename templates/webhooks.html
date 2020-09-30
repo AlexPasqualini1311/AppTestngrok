@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webhooks</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="margin: 0 auto;padding: 20%;">
+    <h1>Stores Registered Webhooks</h1>
+
+    <div style="margin-top:50px;">
+    {% if vide %}
+      <h2>You have no webhook registered ! Come back later :) </h2>
+    {% else %}
+      <form action="/webhook_delete" method="POST">
+      {% for webhook in webhooks %}
+      <div style="border: solid black 2px; padding: 5px; margin: 3px;">
+        <input type="radio" name="webhook" id="{{ webhook.topic }}" value="{{ webhook.topic }}">
+        <label for="{{ webhook.topic }}"> <h4>Topic: <strong>{{ webhook.topic }}</strong></h4></label>
+        <h4> Address: {{ webhook.address }}</h4>
+        <input type="hidden" id="{{ webhook.id }}" name="id" value="{{ webhook.id }}"/>
+      </div>
+      {% endfor %}
+      <input type="submit" name="submit" id="btnSubmit" value="delete webhook"/>
+    </form>
+    {% endif %}
+    <div>
+      <form action="/home">
+        <input type="submit" value="return to homepage">
+      </form>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

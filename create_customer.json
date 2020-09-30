@@ -1,0 +1,19 @@
+{
+  "data": {
+    "customerCreate": null
+  },
+  "errors": [
+    {
+      "locations": [
+        {
+          "column": 13,
+          "line": 3
+        }
+      ],
+      "message": "Customer accounts are disabled.",
+      "path": [
+        "customerCreate"
+      ]
+    }
+  ]
+}
